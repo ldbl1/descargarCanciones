@@ -21,8 +21,7 @@ def download(folder,url):
 
     with youtube_dl.YoutubeDL(options) as ydl:
         ydl.download([video_info['webpage_url']])
-
-    print("Descarga completada... {}".format(filename))
+        print("Descarga completada... {}".format(filename))
 
 def read_csv(folder):
     csv_file = input("Introduzca la ruta del csv con extensión: ")
@@ -36,6 +35,7 @@ def read_csv(folder):
                 download(folder,row[0])
                 line_count += 1
         print(f'Procesadas {line_count} canciones.')
+
 
 
 def run():
