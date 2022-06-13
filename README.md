@@ -2,8 +2,18 @@
 
 ##### Select Language
 [English](#English)  
-    * [Why](#why) 
+
+   * [Why](#why) 
+   * [Disclaimer](#disclaimer)
+   * [How to use the script](#how)
+   * [Configuration for executing](#configuration)
+    
 [Español](#Spanish)  
+
+   * [Por qué](#porque)
+   * [Descargo de responsabilidad](#descargo)
+   * [Cómo usar el script](#ejecutar)
+   * [Configuración para ejecutar](#configuracion)
 
 <a name="English"/>
 
@@ -16,10 +26,14 @@
 My wedding is in a few months and the restaurant I'm celebrating, needs me to give them a usb drive with all the songs whose I want to party. 
 So, after years of paying for Spotify subscription, i decided to use "my right to listen to music" with this little script after I've tryed to download it from all over internet and not been able to download any music.
 
+<a name="disclaimer"/>
+
 ## Disclaimer
 
 This script does not want to let people do any illegal actions, but to give them some tools to work with YouTube. 
 Any illegal use of my script is not my responsibility.
+
+<a name="how"/>
 
 ## How to use it
 
@@ -54,7 +68,11 @@ After this, you can install the two libraries needed with this two commands:
 
 `pip install easygui`
 
+<<<<<<< HEAD
 `pip install colorama`
+=======
+<a name="configuration"/>
+>>>>>>> 1a94054c30ca803629ea93b0be2b4d0654cdab71
 
 ## Configuration for executing
 
@@ -69,3 +87,65 @@ The urls must have only the url to make it work
 <a name="Spanish"/>
 
 # descargarCanciones - Español
+
+<a name="porque"/>
+
+## Por qué
+
+Me caso en unos meses y el restaurante donde vamos a celebrar el combite, me pedía un pincho usb para poder poner la música. 
+Así que después de haber pagado durante años una suscripción a Spotify, decidí que podía descargarme toda la música por la que estoy pagando para este día, porque me pasé una tarde entera intentando descargar música de internet sin haberlo conseguido. 
+
+<a name="descargo"/>
+
+## Descargo de responsabilidad
+
+Este script no pregente dejar a la gente hacer nada ilegal, sino darles herramientras para trabajar con YouTube.
+Cualquier acción ilegal que se haga con este script no será mi responsabilidad.
+
+<a name="ejecutar"/>
+
+## Cómo ejecutar
+
+Proimero, y lógicamente, necesitarás instalar python.
+Después, asegurate de instalar pip
+
+Para asegurarte de que todo está correcto, puedes ejecutar esto:
+
+`pyton -version`
+
+Deberías tener algo así
+
+`Python 3.8.10`
+
+Cualquier versión sobre esta, será válida
+
+---
+
+Para asegurarte de que tienes pip instalado, ejecuta este comando:
+
+`pip -V` (asegurate de que la V es mayúscula)
+
+Deberías ver algo así
+
+`pip 22.1.2 from (...)`
+
+---
+
+Después de esto, ya puedes instalar las dos librerías necesarias para el programa con los siguientes comandos:
+
+`pip install youtube_dl`
+
+`pip install easygui`
+
+<a name="configuracion"/>
+
+## Configuración para ejecutar
+
+Necesitarás:
+* Una carpeta para descargar todas tus canciones
+* Un fichero CSV con una cabecera cualquiera y las canciones separadas por saltos de carro o \r\n
+
+El fichero CSV debe tener únicamente una columna y esa columna solo contener las url
+
+Las url únicamente pueden tener eso, no pueden tener otro valor
+
