@@ -62,7 +62,7 @@ You should have an output like this.
 
 ---
 
-After this, you can install the two libraries needed with this two commands:
+After this, you can install the three libraries needed with this two commands:
 
 `pip install youtube_dl`
 
@@ -129,7 +129,7 @@ Deberías ver algo así
 
 ---
 
-Después de esto, ya puedes instalar las dos librerías necesarias para el programa con los siguientes comandos:
+Después de esto, ya puedes instalar las tres librerías necesarias para el programa con los siguientes comandos:
 
 `pip install youtube_dl`
 
