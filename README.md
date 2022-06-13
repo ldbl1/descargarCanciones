@@ -13,6 +13,7 @@
    * [Por qué](#porque)
    * [Descargo de responsabilidad](#descargo)
    * [Cómo usar el script](#ejecutar)
+   * [Configuración para ejecutar](#configuracion)
 
 <a name="English"/>
 
