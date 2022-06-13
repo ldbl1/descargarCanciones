@@ -1,11 +1,19 @@
-# descargarCanciones
+# descargarCanciones 
+
+##### Select Language
+[English](#English)  
+[Español](#Spanigh)  
+
+<a name="English"/>
+
+# English
 
 ## Why
 
 My wedding is in a few months and the restaurant I'm celebrating, needs me to give them a usb drive with all the songs whose I want to party. 
 So, after years of paying for Spotify subscription, i decided to use "my right to listen to music" with this little script after I've tryed to download it from all over internet and not been able to download any music.
 
-## Dispclaimer
+## Disclaimer
 
 This script does not want to let people do any illegal actions, but to give them some tools to work with YouTube. 
 Any illegal use of my script is not my responsibility.
@@ -52,3 +60,7 @@ You'll need:
 The csv file must have only 1 column and have a header with any name on it
 
 The urls must have only the url to make it work
+
+<a name="Spanish"/>
+
+# descargarCanciones - Español
