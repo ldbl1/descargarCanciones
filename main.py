@@ -3,11 +3,13 @@ import csv
 from easygui import *
 import os
 clear = lambda: os.system('cls')
-
+import colorama
+from colorama import Fore
+from colorama import Style
 
 def get_folder():
     print("")
-    input("Ahora se le solicitará un directorio donde descargar las canciones. Pulse cualquier botón para continuar")
+    input(Fore.GREEN + Style.BRIGHT + "Ahora se le solicitará un directorio donde descargar las canciones. Pulse cualquier botón para continuar" + Style.RESET_ALL)
     folder = diropenbox('test', 'Seleccione la carpeta para descargar las canciones', 'C:\\')
     return folder
 
@@ -26,20 +28,20 @@ def download(folder,url):
     try:
         with youtube_dl.YoutubeDL(options) as ydl:
             ydl.download([video_info['webpage_url']])
-            print("Descarga completada... {}".format(filename))
+            print(Fore.GREEN + Style.BRIGHT + "Descarga completada en ruta: {}".format(filename) + Style.RESET_ALL)
     except:
-        raise Exception("Error 001")
+        raise Exception(Fore.RED + Style.BRIGHT + "Error 001" + Style.RESET_ALL)
 
 def read_csv(folder):
     clear()
     printProgramName()
-    input("Seleccione ahora el csv con los enlaces a YouTube. Pulse cualquier tecla para continuar")
+    input(Fore.GREEN + Style.BRIGHT + "Seleccione ahora el csv con los enlaces a YouTube. Pulse cualquier tecla para continuar" + Style.RESET_ALL)
     csv_file = getCSV()
-    print("El fichero seleccionado es -> "+ csv_file)
-    input("Pulse cualquier tecla para continuar")
+    print(Fore.BLUE + Style.BRIGHT + "El fichero seleccionado es -> "+ csv_file + Style.RESET_ALL)
+    input(Fore.GREEN + Style.BRIGHT + "Pulse cualquier tecla para continuar" + Style.RESET_ALL)
     clear()
     printProgramName()
-    print("Comenzando descarga. Espere hasta que se haya finalizado...")
+    print(Fore.BLUE + Style.BRIGHT + "Comenzando descarga. Espere hasta que se haya finalizado..." + Style.RESET_ALL)
     with open(csv_file) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         line_count = 0
@@ -48,15 +50,16 @@ def read_csv(folder):
                 line_count += 1
             else:
                 try:
-                    print(f"Intentando descargar cancion en {row[0]}")
+                    print(Fore.GREEN + Style.BRIGHT + f"Intentando descargar cancion en {row[0]}" + Style.RESET_ALL)
                     download(folder,row[0])
                     line_count += 1
                 except:
-                    print(f"Error al descargar el enlace: {row[0]}")
+                    print(Fore.RED + Style.BRIGHT + f"Error al descargar el enlace: {row[0]}" + Style.RESET_ALL)
         clear()
         printProgramName()
-        print("Programa finalizado")
-        print(f'Se han descargado {line_count} canciones en la carpeta {folder}')
+        print(Fore.GREEN + Style.BRIGHT + "Programa finalizado" + Style.RESET_ALL)
+        print(Fore.BLUE + Style.BRIGHT + f'Se han descargado {line_count} canciones en la carpeta {folder}' + Style.RESET_ALL)
+        input("Pulse cualquier tecla para finalizar el programa")
         
     
 def parseFileName(titulo):
@@ -78,14 +81,14 @@ def getCSV():
 def run():
     clear()
     printProgramName()
-    print("Bienvenido al descargador de canciones")
+    print(Fore.YELLOW + Style.BRIGHT + "Bienvenido al descargador de canciones" + Style.RESET_ALL)
     folder = get_folder()
-    print("Carpeta seleccionada -> " + folder)
-    input(" Pulse cualquier tecla para continuar")
+    print(Fore.BLUE + Style.BRIGHT + "Carpeta seleccionada -> " + folder + Style.RESET_ALL)
+    input(Fore.GREEN + Style.BRIGHT + "Pulse cualquier tecla para continuar" + Style.RESET_ALL)
     read_csv(folder)
 
 def printProgramName():
-    print("""
+    print(Fore.LIGHTCYAN_EX + """
                 ________   _                         _          ___   ___ ___  ___            
                /  ____  \ | |                       | |        |__ \ / _ \__ \|__ \           
               /  / ___|  \| |     ___  _ __ ___   __| | ___       ) | | | | ) |  ) |          
@@ -107,10 +110,11 @@ def printProgramName():
 
 
 
-    """)
+    """ + Style.RESET_ALL)
 
 if __name__=='__main__':
+    colorama.init()
     printProgramName()
-    print("Pulse cualquier tecla para comenzar el programa")
-    input("Pulse CTRL + C para finalizarlo en cualquier momento")
+    print(Fore.GREEN + Style.BRIGHT + "Pulse cualquier tecla para comenzar el programa" + Style.RESET_ALL)
+    input("Pulse Ctrl - C para cerrar el programa en cualquier momento")
     run()

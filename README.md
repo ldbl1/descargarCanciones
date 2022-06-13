@@ -54,6 +54,8 @@ After this, you can install the two libraries needed with this two commands:
 
 `pip install easygui`
 
+`pip install colorama`
+
 ## Configuration for executing
 
 You'll need:
