@@ -135,6 +135,8 @@ Después de esto, ya puedes instalar las dos librerías necesarias para el progr
 
 `pip install easygui`
 
+`pip install colorama`
+
 <a name="configuracion"/>
 
 ## Configuración para ejecutar
