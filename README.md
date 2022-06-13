@@ -42,7 +42,7 @@ Later, make sure you have pip installed.
 
 To make sure you have all seted up, execute this two commands on a CDM
 
-`pyton -version`
+`python -version`
 
 You should have an output like this
 
@@ -109,7 +109,7 @@ Después, asegurate de instalar pip
 
 Para asegurarte de que todo está correcto, puedes ejecutar esto:
 
-`pyton -version`
+`python -version`
 
 Deberías tener algo así
 
