@@ -42,6 +42,7 @@ def read_csv(folder):
     clear()
     printProgramName()
     print(Fore.BLUE + Style.BRIGHT + "Comenzando descarga. Espere hasta que se haya finalizado..." + Style.RESET_ALL)
+    canciones_erroneas = 0
     with open(csv_file) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         line_count = 0
@@ -55,10 +56,12 @@ def read_csv(folder):
                     line_count += 1
                 except:
                     print(Fore.RED + Style.BRIGHT + f"Error al descargar el enlace: {row[0]}" + Style.RESET_ALL)
+                    canciones_erroneas += 1
         clear()
         printProgramName()
         print(Fore.GREEN + Style.BRIGHT + "Programa finalizado" + Style.RESET_ALL)
-        print(Fore.BLUE + Style.BRIGHT + f'Se han descargado {line_count} canciones en la carpeta {folder}' + Style.RESET_ALL)
+        print(Fore.BLUE + Style.BRIGHT + f'Se han descargado {line_count-1} canciones en la carpeta {folder}' + Style.RESET_ALL)
+        print(Fore.RED + style.BRIGHT + f'Pero hubo {canciones_erroneas} que no se pudieron descargar' + Style.RESET_ALL)
         input("Pulse cualquier tecla para finalizar el programa")
         
     
